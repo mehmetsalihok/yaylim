@@ -1,69 +1,121 @@
-/* Genel Ayarlar */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    background-color: #fcfcfc; 
-    color: #333; 
+/* Fontları içe aktarıyoruz: Başlıklar için Playfair, metinler için Inter */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&family=Inter:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #faf9f7; /* Arka planı referanstaki gibi yumuşak bir kırık beyaz yaptık */
 }
 
-/* Üst Kısım (Header) Tasarımı */
-header { 
-    text-align: center; 
-    padding: 2.5rem; 
-    background-color: #fcf6e8; 
-    border-bottom: 3px solid #e1b12c; 
-}
-header h1 { color: #2f3640; margin-bottom: 10px; font-size: 2rem;}
-header p { color: #7f8fa6; }
-
-/* Dinamik Ürün Izgarası (Mobil Uyumlu) */
-.product-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 25px; 
-    padding: 30px; 
-    max-width: 1200px; 
-    margin: 0 auto; 
+.section-title {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  color: #5c3531; /* Sıcak kahve/bordo tonu */
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-weight: 500;
 }
 
-/* Ürün Kartları */
-.product-card { 
-    background: white; 
-    border-radius: 12px; 
-    padding: 20px; 
-    text-align: center; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
-    transition: transform 0.3s ease; 
-}
-.product-card:hover { transform: translateY(-5px); }
-
-.product-card img { 
-    width: 100%; 
-    height: 250px; 
-    object-fit: cover; 
-    border-radius: 8px; 
-    margin-bottom: 15px; 
-}
-.product-card h2 { font-size: 1.3rem; margin-bottom: 10px;}
-.product-card p { font-size: 0.95rem; color: #555; margin-bottom: 10px;}
-
-.price { 
-    font-size: 1.4rem; 
-    font-weight: bold; 
-    color: #e1b12c; 
-    margin: 15px 0; 
+.product-grid {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  padding: 20px;
+  flex-wrap: wrap;
 }
 
-/* Shopier Butonu Öncesi Geçici Tasarım */
-.gecici-buton { 
-    background-color: #44bd32; 
-    color: white; 
-    border: none; 
-    padding: 12px 20px; 
-    border-radius: 6px; 
-    cursor: pointer; 
-    font-size: 1rem; 
-    width: 100%; 
-    font-weight: bold;
+.product-card {
+  width: 280px;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03); /* Çok hafif, zarif bir gölge */
+  display: flex;
+  flex-direction: column;
 }
-.gecici-buton:hover { background-color: #389a29; }
+
+.image-container {
+  position: relative;
+  height: 220px;
+  width: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #5c3531;
+  color: #ffffff;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.product-info {
+  padding: 20px 15px;
+  text-align: left;
+}
+
+.price-row {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.current-price {
+  color: #5c3531;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.old-price {
+  color: #a3a3a3;
+  text-decoration: line-through;
+  font-size: 14px;
+}
+
+.product-title {
+  font-size: 15px;
+  color: #222;
+  margin: 0 0 6px 0;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.product-desc {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+.shipping-promo {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.add-to-cart {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid #5c3531;
+  color: #5c3531;
+  border-radius: 30px; /* Tam oval görünüm */
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background: #5c3531;
+  color: #ffffff;
+}
